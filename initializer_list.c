@@ -7,15 +7,15 @@ struct	s_movie
 	int		duration_min;
 };
 
-int	main(void)
-{
-	struct s_movie	t_my_movie;
+// int	main(void)
+// {
+// 	struct s_movie	t_my_movie;
 
-	t_my_movie = (struct s_movie)
-	{
-		.title = "Harry Potter and the Philosopher's Stone",
-		.director = "Chris Columbus",
-		.duration_min = 159
-	};
-	return (0);
-}
+// 	t_my_movie = (struct s_movie)
+// 	{
+// 		.title = "Harry Potter and the Philosopher's Stone",
+// 		.director = "Chris Columbus",
+// 		.duration_min = 159
+// 	};
+// 	return (0);
+// }
