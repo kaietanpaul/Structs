@@ -1,11 +1,11 @@
-#include <stdio.h>
+// #include <stdio.h>
 
-struct	s_movie
-{
-	char	title[100];
-	char	director[50];
-	int		duration_min;
-};
+// struct	s_movie
+// {
+// 	char	title[100];
+// 	char	director[50];
+// 	int		duration_min;
+// };
 
 // int	main(void)
 // {

@@ -1,22 +1,22 @@
-#include "structs.h"
+// #include "structs.h"
 
-struct	s_movie
-{
-	char	title[100];
-	char	director[50];
-	int		duration_min;
-};
+// struct	s_movie
+// {
+// 	char	title[100];
+// 	char	director[50];
+// 	int		duration_min;
+// };
 
-void	print_movie(struct s_movie movie)
-{
-	printf("Title: %s\nDirector: %s\nDuration: %imin.\n",
-		movie.title, movie.director, movie.duration_min);
-}
+// void	print_movie(struct s_movie movie)
+// {
+// 	printf("Title: %s\nDirector: %s\nDuration: %imin.\n",
+// 		movie.title, movie.director, movie.duration_min);
+// }
 
-void	set_movie_duration(struct s_movie *movie, int new_duration)
-{
-	movie->duration_min = new_duration;
-}
+// void	set_movie_duration(struct s_movie *movie, int new_duration)
+// {
+// 	movie->duration_min = new_duration;
+// }
 
 // int	main(void)
 // {
