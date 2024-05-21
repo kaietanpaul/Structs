@@ -21,7 +21,7 @@
 // 	kai_strcpy(t_movies[2].director, "Director3");
 // 	t_movies[2].duration_min = 003;
 
-// 	p_print_all_movies(t_movies);
+// 	p_print_all_movies(t_movies, 3);
 // 	free(t_movies);
 // 	return (0);
 // }
