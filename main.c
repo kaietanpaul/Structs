@@ -1,27 +1,43 @@
 #include "structs.h"
 
+void	add_movie(struct s_movie *t_movies, int fd, char *title, char *director, char *duration)
+{
+	write(fd, "\n", 1);
+	write(fd, title, strlen(title));
+	write(fd, ",", 1);
+	write(fd, director, strlen(director));
+	write(fd, ",", 1);
+	write(fd, duration, strlen(duration));
+}
+
 int	main(void)
 {
 	struct s_movie	*t_movies;
-	int	movies_count;
+	char	buffer[500];
+	int		read_bytes;
+	int		movie_count;
 
-	movies_count = 3;
-	t_movies = malloc(movies_count * sizeof(struct s_movie));
-
-	if(!t_movies)
-		return (-1);
-
-	kai_strcpy(t_movies[0].title, "Movie1");
-	kai_strcpy(t_movies[0].director, "Director1");
-	t_movies[0].duration_min = 001;
-	kai_strcpy(t_movies[1].title,"Movie2");
-	kai_strcpy(t_movies[1].director, "Director2");
-	t_movies[1].duration_min = 002;
-	kai_strcpy(t_movies[2].title, "Movie3");
-	kai_strcpy(t_movies[2].director, "Director3");
-	t_movies[2].duration_min = 003;
-
-	p_print_all_movies(t_movies);
-	free(t_movies);
+	int		fd = open("movies.txt", O_RDWR | O_APPEND);
+	if (!fd)
+		printf("Open error");
+	else
+	{
+		add_movie(t_movies, fd, "Dupa Dupa", "Polansky", "120");
+		close(fd);
+		int		fd = open("movies.txt", O_RDONLY);
+		read_bytes = read(fd, buffer, sizeof(buffer));
+		buffer[read_bytes] = '\0';
+		movie_count = movie_counter(buffer);
+		t_movies = malloc(movie_count *(sizeof(struct s_movie)));
+		if (!t_movies)
+			printf("Allocation error");
+		else
+		{
+			populate_struct(t_movies, buffer, movie_count);
+			p_print_all_movies(t_movies, movie_count);
+			free(t_movies);
+		}
+	}
+	close(fd);
 	return (0);
 }
