@@ -20,7 +20,7 @@ void	print_movie(struct s_movie);
 void	set_movie_duration(struct s_movie *, int);
 void	print_all_movies(struct s_movie []);
 void	p_print_all_movies(struct s_movie *, int);
-int	movie_counter(char *);
 void	populate_struct(struct s_movie *, char *, int);
+int	movie_counter(char *);
 
 #endif
